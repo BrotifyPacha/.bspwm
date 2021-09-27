@@ -1,0 +1,54 @@
+
+# Launching programs
+
+alt t
+    xfce4-terminal
+alt b
+    brave
+
+alt h
+    bspc node west.window --focus
+alt j
+    bspc node south.window --focus
+alt k
+    bspc node north.window --focus
+alt l
+    bspc node east.window --focus
+
+alt shift h
+    bspc node focused.window --swap west --follow
+alt shift j
+    bspc node focused.window --swap south --follow
+alt shift k
+    bspc node focused.window --swap north --follow
+alt shift l
+    bspc node focused.window --swap east --follow
+
+alt shift 1
+    bspc node focused -m west --follow
+alt shift 2
+    bspc node focused -m east --follow
+
+ctrl shift h
+    bspc node focused.window --presel-dir ~west
+ctrl shift j
+    bspc node focused.window --presel-dir ~south
+ctrl shift k
+    bspc node focused.window --presel-dir ~north
+ctrl shift l
+    bspc node focused.window --presel-dir ~east
+
+alt r
+    bspc node first_ancestor -R 180
+
+alt c
+    bspc node -c
+
+alt d
+    bspc desktop --focus next
+
+alt F12
+    xprop
+
+alt q
+    bspc wm -r
