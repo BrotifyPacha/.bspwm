@@ -39,5 +39,14 @@ alt d
 alt F12
     xprop
 
-alt q
-    bspc wm -r
+ctrl alt shift r
+    bspc wm -r ; pkill -usr1 -x sxhkd; notify-send 'bspwm & sxhkd' 'Reloaded config' -t 1500
+
+# Sound stuff
+alt F5
+    amixer -D pulse set Master 1+ toggle
+alt F6
+    amixer set Master 5%-
+alt F7
+    amixer set Master 5%+
+
