@@ -1,9 +1,10 @@
 
 # Launching programs
-
-alt t
-    xfce4-terminal
-alt b
+ctrl shift t
+    telegram-desktop
+ctrl shift s
+    spotify
+ctrl shift b
     brave
 
 alt {h,j,k,l}
