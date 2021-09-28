@@ -6,37 +6,17 @@ alt t
 alt b
     brave
 
-alt h
-    bspc node west.window --focus
-alt j
-    bspc node south.window --focus
-alt k
-    bspc node north.window --focus
-alt l
-    bspc node east.window --focus
+alt {h,j,k,l}
+    bspc node {west,south,north,east}.window --focus
 
-alt shift h
-    bspc node focused.window --swap west --follow
-alt shift j
-    bspc node focused.window --swap south --follow
-alt shift k
-    bspc node focused.window --swap north --follow
-alt shift l
-    bspc node focused.window --swap east --follow
+alt shift {h,j,k,l}
+    bspc node focused.window --swap {west,south,north,east} --follow
 
-alt shift 1
-    bspc node focused -m west --follow
-alt shift 2
-    bspc node focused -m east --follow
+alt shift {1,2}
+    bspc node focused -m {west,east} --follow
 
-ctrl shift h
-    bspc node focused.window --presel-dir ~west
-ctrl shift j
-    bspc node focused.window --presel-dir ~south
-ctrl shift k
-    bspc node focused.window --presel-dir ~north
-ctrl shift l
-    bspc node focused.window --presel-dir ~east
+ctrl shift {h,j,k,l}
+    bspc node focused.window --presel-dir ~{west,south,north,east}
 
 alt r
     bspc node first_ancestor -R 180
