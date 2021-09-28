@@ -18,6 +18,15 @@ alt shift {1,2}
 ctrl shift {h,j,k,l}
     bspc node focused.window --presel-dir ~{west,south,north,east}
 
+alt {bracketleft,bracketright}
+    bspc node first_ancestor --ratio {-,+}0.05
+
+alt Return
+    bspc node focused.window --swap biggest
+
+alt f
+    bspc desktop focused --layout next
+
 alt r
     bspc node first_ancestor -R 180
 
