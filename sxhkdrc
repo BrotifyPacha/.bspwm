@@ -32,8 +32,15 @@ alt Return
 alt f
     bspc desktop focused --layout next
 
+alt m
+    bspc node focused.window --flag hidden=on
+alt shift m
+    bspc node any.window.hidden --flag hidden=off
+
 alt r
     bspc node first_ancestor -R 180
+alt shift r
+    bspc node first_ancestor -R 90
 
 alt c
     bspc node -c
