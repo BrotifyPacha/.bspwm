@@ -6,6 +6,10 @@ ctrl shift s
     spotify
 ctrl shift b
     brave
+ctrl shift d
+    datagrip
+ctrl shift m
+    evolution
 
 alt {h,j,k,l}
     bspc node {west,south,north,east}.window --focus
