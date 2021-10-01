@@ -24,3 +24,7 @@ bspc rule --add Wrapper\-\2\.\0 state=floating center=on rectangle=400x600+0+0 b
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
+# JVM hoolahoops
+_JAVA_AWT_WM_NONREPARTENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
+wmname LG3D
