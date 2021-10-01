@@ -31,7 +31,7 @@ alt {bracketleft,bracketright}
     bspc node first_ancestor --ratio {-,+}0.05
 
 alt Return
-    bspc node focused.window --swap biggest
+    bspc node focused.window --swap biggest.local
 
 alt f
     bspc desktop focused --layout next
