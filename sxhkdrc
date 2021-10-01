@@ -30,6 +30,9 @@ ctrl shift {h,j,k,l}
 alt {bracketleft,bracketright}
     bspc node first_ancestor --ratio {-,+}0.05
 
+alt grave
+    bspc node --to-node "last.!automatic"
+
 alt Return
     bspc node focused.window --swap biggest.local
 
