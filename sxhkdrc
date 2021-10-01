@@ -30,6 +30,11 @@ ctrl shift {h,j,k,l}
 alt {bracketleft,bracketright}
     bspc node first_ancestor --ratio {-,+}0.05
 
+alt equal
+    bspc node first_ancestor --equalize
+alt shift equal
+    bspc node first_ancestor --balance
+
 alt grave
     bspc node --to-node "last.!automatic"
 
