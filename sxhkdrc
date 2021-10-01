@@ -35,7 +35,7 @@ alt f
 alt m
     bspc node focused.window --flag hidden=on
 alt shift m
-    bspc node any.window.hidden --flag hidden=off
+    bspc node any.window.hidden --flag hidden=off --focus
 
 alt r
     bspc node first_ancestor -R 180
