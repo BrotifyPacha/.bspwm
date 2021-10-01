@@ -1,0 +1,19 @@
+#! /bin/sh
+
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+
+echo $@ >> ~/.rules_cmd.log
+
+case "$class" in
+	'Wrapper-2.0')
+        eval "$consequences"
+        echo "monitor=west state=floating center=on follow=on rectangle=800x400+0+0"
+        ;;
+    'Xfce4-settings-manager')
+        eval "$consequences"
+        echo "monitor=west state=floating center=on follow=on"
+        ;;
+esac
