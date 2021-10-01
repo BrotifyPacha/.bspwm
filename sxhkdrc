@@ -21,7 +21,7 @@ alt shift {1,2}
     bspc node focused -m {west,east} --follow
 
 ctrl shift {h,j,k,l}
-    bspc node focused.window --presel-dir ~{west,south,north,east}
+    bspc node focused.window --presel-dir '~'{west,south,north,east}
 
 alt {bracketleft,bracketright}
     bspc node first_ancestor --ratio {-,+}0.05
