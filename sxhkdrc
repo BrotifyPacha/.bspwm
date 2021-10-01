@@ -14,8 +14,12 @@ ctrl shift m
 alt {h,j,k,l}
     bspc node {west,south,north,east}.window --focus
 
-alt shift {h,j,k,l}
-    bspc node focused.window --swap {west,south,north,east} --follow
+alt shift h
+    bspc node focused.window --swap west --follow || bspc node focused.window -m west --follow
+alt shift l
+    bspc node focused.window --swap east --follow || bspc node focused.window -m east --follow
+alt shift {j,k}
+    bspc node focused.window --swap {south,north} --follow
 
 alt shift {1,2}
     bspc node focused -m {west,east} --follow
