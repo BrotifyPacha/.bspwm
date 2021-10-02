@@ -1,7 +1,9 @@
 #! /bin/sh
 
-bspc monitor -m west 1 2 3 4
-bspc monitor -m east 1 2 3 4
+# bspc monitor DP-1 -d 1 2 3 4
+# bspc monitor HDMI-1 -d 5 6 7 8
+bspc monitor focused -d 1 2 3 4
+bspc monitor east -d 5 6 7 8
 
 # BSPWM config
 bspc config border_width	4
