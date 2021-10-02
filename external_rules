@@ -12,6 +12,10 @@ case "$class" in
         eval "$consequences"
         echo "monitor=west state=floating center=on follow=on rectangle=800x400+0+0"
         ;;
+    'Xfce4-panel')
+        eval "$consequences"
+        echo "monitor=west state=floating center=on follow=on"
+        ;;
     'Xfce4-settings-manager')
         eval "$consequences"
         echo "monitor=west state=floating center=on follow=on"
