@@ -10,6 +10,8 @@ ctrl shift d
     datagrip
 ctrl shift m
     evolution
+ctrl shift e
+    xdg-open ~
 
 alt {h,j,k,l}
     bspc node {west,south,north,east}.window --focus
