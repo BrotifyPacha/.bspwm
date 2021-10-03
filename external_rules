@@ -14,7 +14,7 @@ case "$class" in
         ;;
     'Xfce4-panel')
         eval "$consequences"
-        echo "monitor=west state=floating center=on follow=on"
+        echo "monitor=west state=floating follow=on"
         ;;
     'Xfce4-settings-manager')
         eval "$consequences"
