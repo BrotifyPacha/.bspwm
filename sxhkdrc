@@ -22,6 +22,8 @@ alt shift l
     bspc node focused.window --swap east --follow || bspc node focused.window -m east --follow
 alt shift {j,k}
     bspc node focused.window --swap {south,north} --follow
+alt shift m
+    bspc node --to-monitor next --follow
 
 # alt shift {1,2}
 #     bspc node focused -m {west,east} --follow
