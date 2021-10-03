@@ -13,6 +13,13 @@ ctrl shift m
 ctrl shift e
     xdg-open ~
 
+Print
+    xfce4-screenshooter --region
+alt Print
+    xfce4-screenshooter --window
+ctrl shift Print
+    xfce4-screenshooter --fullscreen
+
 alt {h,j,k,l}
     bspc node {west,south,north,east}.window --focus
 
