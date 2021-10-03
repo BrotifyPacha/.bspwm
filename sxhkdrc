@@ -64,7 +64,9 @@ alt shift r
     bspc node first_ancestor -R 90
 
 alt c
-    bspc node -c
+    bspc node --close
+alt shift c
+    bspc node --kill
 
 alt d
     bspc desktop --focus next
