@@ -16,7 +16,9 @@ case "$class" in
         eval "$consequences"
         echo "monitor=west state=floating follow=on"
         ;;
-    'Xfce4-settings-manager')
+    'Xfce4-settings-manager') ;&
+    'Blueman-manager') ;&
+    'Blueberry.py')
         eval "$consequences"
         echo "monitor=west state=floating center=on follow=on"
         ;;
