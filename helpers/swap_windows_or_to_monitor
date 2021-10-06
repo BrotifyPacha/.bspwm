@@ -1,0 +1,3 @@
+#! /bin/sh
+
+bspc node --swap $1 --follow || bspc node -m $1 --follow

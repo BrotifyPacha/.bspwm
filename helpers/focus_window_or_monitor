@@ -1,0 +1,3 @@
+#! /bin/sh
+
+bspc node $1.window --focus || bspc monitor $1 --focus
