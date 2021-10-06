@@ -21,7 +21,7 @@ ctrl shift Print
     xfce4-screenshooter --fullscreen
 
 alt {h,j,k,l}
-    bspc node {west,south,north,east}.window --focus
+    bspc node {west,south,north,east}.window --focus || bspc monitor {west,south,north,east} --focus
 
 alt shift h
     bspc node focused.window --swap west --follow || bspc node focused.window -m west --follow
