@@ -27,6 +27,7 @@ bspc config external_rules_command "$HOME/.config/bspwm/external_rules"
 xsetroot -cursor_name left_ptr &
 
 # Autostart
+kill $(ps -C sxhkd,picom -o pid=)
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
