@@ -51,7 +51,7 @@ alt shift equal
     bspc node first_ancestor --balance
 
 alt grave
-    bspc node --to-node "last.!automatic"
+    bspc node --to-node "last.!automatic" --state tiled
 
 alt Return
     bspc node --swap biggest.local
@@ -65,6 +65,11 @@ alt m
     bspc node --flag hidden=on
 alt shift m
     bspc node any.window.hidden --flag hidden=off --focus
+
+alt e
+    bspc node any.floating --focus
+alt shift e
+    bspc node --state \~floating
 
 alt r
     bspc node first_ancestor -R 180
