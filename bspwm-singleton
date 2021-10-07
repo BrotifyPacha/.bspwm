@@ -1,5 +1,8 @@
 #! /usr/bin/zsh
 
+LOG_FILE="$HOME/.bspwm-singleton-log"
+WID_DIR="$BSPCONFIG/wids"
+
 function startOrFocus() {
     if [[ $# != 1 ]] echo "Usage: bspwm-singleton start-or-focus cmd" && exit
     widFile="$WID_DIR/$1.wid"
@@ -13,6 +16,8 @@ function startOrFocus() {
 }
 
 function manage() {
+    mkdir -p "$WID_DIR"
+    rm "$WID_DIR/*"
     managed=($@)
     echo $managed
     bspc subscribe node_add node_remove | while read -r Event
@@ -20,12 +25,14 @@ function manage() {
         type=$(echo "$Event" | awk '{print $1}')
         uuid=$(echo "$Event" | awk '{print $NF}')
         echo "$type $uuid $cmd" >> $LOG_FILE
-        if [[ $type == 'node_remove' && -n "$(ls -A $WID_DIR)" ]] {
-            for file in $WID_DIR/*.wid
-            do
-                fileUuid=$(cat $file)
-                if [[ $uuid == $fileUuid ]] rm $file
-            done
+        if [[ $type == 'node_remove' ]] {
+            if [[ -n "$(ls -A $WID_DIR)" ]] {
+                for file in $WID_DIR/*.wid
+                do
+                    fileUuid=$(cat $file)
+                    if [[ $uuid == $fileUuid ]] rm $file
+                done
+            }
         } else {
             cmd=$(ps -p "$(xdo pid $uuid)" -o command= | awk '{print $1 }' | awk -F "/" '{print $NF}') 2>/dev/null
             for manCmd in $managed
@@ -36,8 +43,7 @@ function manage() {
     done
 }
 
-LOG_FILE="$HOME/.bspwm-singleton-log"
-WID_DIR="$HOME/.config/bspwm/wids"
+if [[ ! -a $WID_DIR ]] mkdir $WID_DIR
 
 if [[ $# == 0 ]] {
     echo "Usage: bspwm-singleton command [arguments]"
