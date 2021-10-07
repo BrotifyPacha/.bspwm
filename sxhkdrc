@@ -24,7 +24,7 @@ alt {h,j,k,l}
     "$BSPCONFIG/helpers/focus_window_or_monitor" {west,south,north,east}
 
 alt shift {h,j,k,l}
-    "$BSPCONFIG/helpers/swap_windows_or_to_monitor" {west,south,north,east}
+    "$BSPCONFIG/helpers/shift_hjkl_handler" {west,south,north,east}
 
 alt shift m
     bspc node --to-monitor next --follow

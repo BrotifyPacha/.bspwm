@@ -1,0 +1,18 @@
+#! /usr/bin/zsh
+
+state=$(bspc query --tree --node focused | jq .client.state)
+echo $@\ $state >> ~/tmp
+if [[ $state == '"floating"' ]] {
+    case "$1" in
+        west)
+            bspc node --move -50 0 ;;
+        south)
+            bspc node --move 0 +50 ;;
+        north)
+            bspc node --move 0 -50 ;;
+        east)
+            bspc node --move +50 0 ;;
+    esac
+} else {
+    bspc node --swap $1 --follow || bspc node -m $1 --follow
+}
