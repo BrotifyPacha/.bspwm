@@ -58,6 +58,8 @@ alt Return
 
 alt f
     bspc desktop focused --layout next
+alt shift f
+    bspc node --state \~fullscreen
 
 alt m
     bspc node --flag hidden=on
