@@ -77,7 +77,7 @@ alt shift c
     bspc node --kill
 
 alt d
-    bspc desktop --focus next
+    bspc desktop --focus next.local
 
 alt F12
     xprop
