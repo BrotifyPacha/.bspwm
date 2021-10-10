@@ -1,0 +1,6 @@
+
+wids=$(wmctrl -l | awk '{print $1}')
+for wid in $wids
+do
+    echo $wid $(ps -o command= -p $(xdo pid $wid) | awk '{print $1}' | awk -F '/' '{print $NF}')
+done
