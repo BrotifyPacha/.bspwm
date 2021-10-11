@@ -89,6 +89,9 @@ alt c
 alt shift c
     bspc node --kill
 
+alt p
+    bspc node last --focus
+
 alt d
     bspc desktop --focus next.local
 
