@@ -7,13 +7,13 @@ ctrl shift s
 ctrl shift b
     zsh "$HOME/.config/bspwm/bspwm-singleton" brave
 ctrl shift d
-    zsh "$HOME/.config/bspwm/bspwm-singleton" java
+    zsh "$HOME/.config/bspwm/bspwm-singleton" datagrip
 ctrl shift m
-    evolution
+    zsh "$HOME/.config/bspwm/bspwm-singleton" evolution
 ctrl shift e
     xdg-open ~
 ctrl shift i
-    ~/.local/bin/Insomnia.AppImage
+    zsh "$HOME/.config/bspwm/bspwm-singleton" insomnia
 
 Print
     xfce4-screenshooter --region
