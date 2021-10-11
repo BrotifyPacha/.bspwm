@@ -12,6 +12,8 @@ ctrl shift m
     evolution
 ctrl shift e
     xdg-open ~
+ctrl shift i
+    ~/.local/bin/Insomnia.AppImage
 
 Print
     xfce4-screenshooter --region
