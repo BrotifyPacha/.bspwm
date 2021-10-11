@@ -3,8 +3,8 @@
 layout=$(bspc query --tree -d | grep -Po 'layout":"[^"]*' | awk -F '":"' '{print $2}')
 
 case "$layout" in
-    tiled) layout="  ";;
-    monocle) layout=" ﱡ ";;
+    tiled) layout="◫";;
+    monocle) layout="□";;
 esac
 
 echo $layout
