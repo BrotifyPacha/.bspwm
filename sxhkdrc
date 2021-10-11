@@ -1,13 +1,13 @@
 
 # Launching programs
 ctrl shift t
-    zsh "$HOME/.config/bspwm/bspwm-singleton" start-or-focus telegram-desktop
+    zsh "$HOME/.config/bspwm/bspwm-singleton" telegram-desktop
 ctrl shift s
-    zsh "$HOME/.config/bspwm/bspwm-singleton" start-or-focus spotify
+    zsh "$HOME/.config/bspwm/bspwm-singleton" spotify
 ctrl shift b
-    zsh "$HOME/.config/bspwm/bspwm-singleton" start-or-focus brave
+    zsh "$HOME/.config/bspwm/bspwm-singleton" brave
 ctrl shift d
-    datagrip
+    zsh "$HOME/.config/bspwm/bspwm-singleton" java
 ctrl shift m
     evolution
 ctrl shift e

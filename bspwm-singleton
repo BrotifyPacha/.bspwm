@@ -3,7 +3,7 @@
 LOG_FILE="$HOME/.bspwm-singleton-log"
 
 function startOrFocus() {
-    if [[ $# != 1 ]] echo "Usage: bspwm-singleton start-or-focus cmd 'regex for wmctrl'" && exit
+    if [[ $# != 1 ]] echo "Usage: bspwm-singleton cmd" && exit
         wids=(`$BSPCONFIG/helpers/get_window_cmds | grep $1 | awk '{print $1}' | tr '\n' ' '`)
     echo $wids >> $LOG_FILE
     if [[ -z $wids ]] {
@@ -18,16 +18,7 @@ function startOrFocus() {
 }
 
 if [[ $# == 0 ]] {
-    echo "Usage: bspwm-singleton command [arguments]"
+    echo "Usage: bspwm-singleton program "
     exit
 }
-case "$1" in
-    'start-or-focus')
-        shift
-        echo "Command: start-or-focus $@" >> $LOG_FILE
-        startOrFocus $@
-        ;;
-    *)
-        echo "Unknown command: $1" >> $LOG_FILE
-        echo "Unknown command: $1"
-esac
+startOrFocus $@
