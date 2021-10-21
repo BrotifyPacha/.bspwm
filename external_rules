@@ -26,4 +26,8 @@ case "$class" in
         eval "$consequences"
         echo "monitor=west state=floating center=on follow=on"
         ;;
+    'Galculator') 
+        eval "$consequences"
+        echo "state=floating center=on follow=on"
+        ;;
 esac

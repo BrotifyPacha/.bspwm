@@ -14,6 +14,8 @@ ctrl shift e
     xdg-open ~
 ctrl shift i
     zsh "$HOME/.config/bspwm/bspwm-singleton" insomnia
+ctrl shift c
+    zsh "$HOME/.config/bspwm/bspwm-singleton" galculator
 
 Print
     xfce4-screenshooter --region
