@@ -60,10 +60,10 @@ alt grave
 alt Return
     bspc node --swap biggest.local
 
-alt f
+alt o
     bspc desktop focused --layout next
-alt shift f
-    bspc node --state \~fullscreen
+alt shift o
+    bspc node --state fullscreen || bspc node --state tiled
 
 alt m
     bspc node --flag hidden=on
