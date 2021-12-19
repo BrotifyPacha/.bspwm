@@ -16,7 +16,7 @@ case "$class" in
         ;;
     'jetbrains-datagrip')
         eval "$consequences"
-        echo "border=off"
+        echo "desktop=2 border=off follow=on"
         ;;
     'Xfce4-panel')
         eval "$consequences"
@@ -32,4 +32,10 @@ case "$class" in
         eval "$consequences"
         echo "state=floating center=on follow=on"
         ;;
+    '')
+        case $procCommand in
+            (spotify)
+                echo "desktop=M follow=on"
+                ;;
+        esac;;
 esac
