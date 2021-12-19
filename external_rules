@@ -4,8 +4,10 @@ wid=$1
 class=$2
 instance=$3
 consequences=$4
+procCommand=$(ps -p "$(xdo pid "$wid")" -o comm= 2>/dev/null)
 
 echo $@ >> ~/.rules_cmd.log
+echo $procCommand >> ~/.rules_cmd.log
 
 case "$class" in
 	'Wrapper-2.0')
