@@ -30,12 +30,6 @@ alt {h,j,k,l}
 alt shift {h,j,k,l}
     "$BSPCONFIG/helpers/shift_hjkl_handler" {west,south,north,east}
 
-alt shift m
-    bspc node --to-monitor next --follow
-
-# alt shift {1,2}
-#     bspc node focused -m {west,east} --follow
-
 ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
 
