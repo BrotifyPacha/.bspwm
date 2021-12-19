@@ -49,14 +49,6 @@ alt bracketleft
 alt shift bracketleft
     bspc node --resize bottom 0 -50 || bspc node --resize top 0 -50
 
-alt equal
-    bspc node first_ancestor --balance
-alt shift equal
-    bspc node @/ --balance
-
-alt grave
-    bspc node --to-node "last.!automatic" --state tiled
-
 alt Return
     bspc node --swap biggest.local
 
@@ -75,18 +67,20 @@ alt f
 alt shift f
     bspc node --state floating || bspc node --state tiled
 
-alt r
-    bspc node first_ancestor -R 180
-alt shift r
-    bspc node first_ancestor -R 90
+alt { ,shift} e
+    bspc node {first_ancestor,@/} --balance
 
-alt c
-    bspc node --close
-alt shift c
-    bspc node --kill
+alt { ,shift} r
+    bspc node first_ancestor -R {180,90}
+
+alt { ,shift} c
+    bspc node {--close,--kill}
 
 alt p
     bspc node last --focus
+alt shift p
+    bspc node --to-node "last.!automatic" --state tiled
+
 
 alt { ,shift} w
     bspc desktop --focus {next,prev}.local
