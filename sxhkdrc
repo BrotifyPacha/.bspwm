@@ -70,10 +70,10 @@ alt m
 alt shift m
     bspc node any.window.hidden --flag hidden=off --focus
 
-alt e
-    bspc node any.floating --focus
-alt shift e
-    bspc node --state \~floating
+alt f
+    bspc node next.floating --focus
+alt shift f
+    bspc node --state floating || bspc node --state tiled
 
 alt r
     bspc node first_ancestor -R 180
