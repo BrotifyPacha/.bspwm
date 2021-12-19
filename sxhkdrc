@@ -94,8 +94,8 @@ alt shift c
 alt p
     bspc node last --focus
 
-alt d
-    bspc desktop --focus next.local
+alt { ,shift} w
+    bspc desktop --focus {next,prev}.local
 
 alt F12
     xprop_val="$(xprop WM_CLASS)" &&  notify-send Xprop "$xprop_val"
