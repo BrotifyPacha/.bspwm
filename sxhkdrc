@@ -30,6 +30,12 @@ alt {h,j,k,l}
 alt shift {h,j,k,l}
     "$BSPCONFIG/helpers/shift_hjkl_handler" {west,south,north,east}
 
+# Mapping for < and > keys
+alt {comma,period}
+    bspc node --to-monitor {next,prev}
+alt shift {comma,period}
+    bspc node --to-monitor {next,prev} --follow
+
 ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
 
