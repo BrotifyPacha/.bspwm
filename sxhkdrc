@@ -105,3 +105,13 @@ alt F6
 alt F7
     amixer set Master 5%+
 
+# Media stuff
+alt F1
+    "$BSPCONFIG/sxhkd-helpers/MediaPlayer2-cmd" PlayPause
+alt F2
+    "$BSPCONFIG/sxhkd-helpers/MediaPlayer2-cmd" Stop
+alt F3
+    "$BSPCONFIG/sxhkd-helpers/MediaPlayer2-cmd" Previous
+alt F4
+    "$BSPCONFIG/sxhkd-helpers/MediaPlayer2-cmd" Next
+
