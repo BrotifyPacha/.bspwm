@@ -40,11 +40,11 @@ ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
 
 alt {1,2,3,4,5,6,7,8,9,0,minus,equal}
-    bspc desktop {1,2,3,4,5,6,7,8,9,0,D,M} --focus
+    bspc desktop {1,2,3,4,5,6,7,8,9,0,Z,M} --focus
 alt shift {1,2,3,4,5,6,7,8,9,0,minus,equal}
-    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,D,M} --follow
+    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,Z,M} --follow
 ctrl {1,2,3,4,5,6,7,8,9,0,minus,equal}
-    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,D,M}
+    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,Z,M}
 
 alt bracketright
     bspc node --resize right +50 0 || bspc node --resize left +50 0
