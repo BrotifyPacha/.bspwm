@@ -1,0 +1,33 @@
+# /bin/sh
+
+echo -n '<txt>'
+counter=0
+bspc query --monitors | while read -r monitor ; do
+    ((counter++))
+    # echo -n $counter
+    # echo -n 'Monitor '$monitor
+    bspc query --names --monitor $monitor --desktops | while read -r dtop ; do
+        focusedDt=$(bspc query --names --desktop $monitor:focused --desktops)
+
+        color=grey
+        if [ $focusedDt == $dtop ] ; then
+            color=white
+        fi
+
+        symbol=$dtop
+        if [ $dtop == 'M' ] ; then
+            symbol=''
+        fi
+        if [ $dtop == 'Z' ] ; then
+            symbol=''
+        fi
+        echo -n "<span fgcolor='$color'>$symbol </span>"
+    done
+    if [ $counter == 1 ] ; then
+        echo ''
+    fi
+done
+echo '</txt>'
+# echo "<txtclick>bspc desktop next.local --focus</txtclick>"
+echo '<tool>Bspwm workspaces</tool>'
+
