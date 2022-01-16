@@ -32,6 +32,18 @@ case "$class" in
         eval "$consequences"
         echo "state=floating center=on follow=on"
         ;;
+    'zoom')
+        eval "$consequences"
+        WM_NAME=$(xprop -notype -id $wid WM_NAME | sed 's%WM_NAME = %%')
+        echo "WM_NAME = -$WM_NAME-" >> ~/.rules_cmd.log
+        if [ $WM_NAME == '"Settings"' ] ; then
+            echo -n "state=floating center=on"
+        fi
+        if [ -z $WM_NAME ] ; then
+            echo -n "state=floating center=on border=off"
+        fi
+        echo " desktop=Z follow=on"
+        ;;
     '')
         case $procCommand in
             (spotify)
