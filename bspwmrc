@@ -31,7 +31,7 @@ xsetroot -cursor_name left_ptr &
 # Autostart
 kill $(ps -C sxhkd,picom -o pid=)
 sxhkd -c ~/.config/bspwm/sxhkdrc &
-# picom --config ~/.config/bspwm/picom.conf --experimental-backends &
+picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
 # JVM hoolahoops
 _JAVA_AWT_WM_NONREPARTENTING=1
