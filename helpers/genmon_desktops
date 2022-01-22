@@ -1,4 +1,4 @@
-# /bin/sh
+#! /bin/sh
 
 echo -n '<txt>'
 counter=0
@@ -9,9 +9,11 @@ bspc query --monitors | while read -r monitor ; do
     bspc query --names --monitor $monitor --desktops | while read -r dtop ; do
         focusedDt=$(bspc query --names --desktop $monitor:focused --desktops)
 
-        color=grey
-        if [ $focusedDt == $dtop ] ; then
-            color=white
+        color="#384848"
+
+        isOccupied=$(bspc query --desktops --desktop .occupied --names | grep $dtop)
+        if [ ! -e $isOccupied ] ; then
+            color="#598080"
         fi
 
         symbol=$dtop
@@ -21,6 +23,12 @@ bspc query --monitors | while read -r monitor ; do
         if [ $dtop == 'Z' ] ; then
             symbol=''
         fi
+
+        if [ $focusedDt == $dtop ] ; then
+            color=white
+            symbol="$symbol"
+        fi
+
         echo -n "<span fgcolor='$color'>$symbol </span>"
     done
     if [ $counter == 1 ] ; then

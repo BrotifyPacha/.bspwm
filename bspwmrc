@@ -33,6 +33,12 @@ kill $(ps -C sxhkd,picom -o pid=)
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
+
+# Update genmon-1 when desktop changes
+bspc subscribe desktop_focus | while read -r event ; do
+    xfce4-panel --plugin-event=genmon-1:refresh:bool:true
+done
+
 # JVM hoolahoops
 _JAVA_AWT_WM_NONREPARTENTING=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true'
