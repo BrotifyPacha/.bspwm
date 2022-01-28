@@ -97,7 +97,7 @@ alt F12
     xprop_val="$(xprop WM_CLASS)" &&  notify-send Xprop "$xprop_val"
 
 ctrl alt shift r
-    bspc wm -r ; pkill -usr1 -x sxhkd; notify-send 'bspwm & sxhkd' 'Reloaded config' -t 1500
+    bspc wm -d > /tmp/bspwm_state ; bspc wm -r ; bspc wm -o ; bspc wm -l /tmp/bspwm_state ; pkill -usr1 -x sxhkd#; notify-send 'bspwm & sxhkd' 'Reloaded config' -t 1500
 
 # Sound stuff
 alt F5
