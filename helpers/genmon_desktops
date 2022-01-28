@@ -10,11 +10,11 @@ bspc query --monitors | while read -r monitor ; do
     bspc query --names --monitor $monitor --desktops | while read -r dtop ; do
         focusedDt=$(bspc query --names --desktop $monitor:focused --desktops)
 
-        color="#384848"
+        color="#555"
 
         isOccupied=$(bspc query --desktops --desktop .occupied --names | grep $dtop)
         if [ ! -e $isOccupied ] ; then
-            color="#598080"
+            color="#ACACB3"
         fi
 
         symbol=$dtop
@@ -26,7 +26,7 @@ bspc query --monitors | while read -r monitor ; do
         fi
 
         if [ $focusedDt == $dtop ] ; then
-            color=white
+            color="#40C0FF"
             symbol="$symbol"
         fi
 
