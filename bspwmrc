@@ -34,6 +34,7 @@ sxhkd -c ~/.config/bspwm/sxhkdrc &
 picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
 
+killall bspc
 # Update genmon-1 when desktop changes
 bspc subscribe desktop_focus | while read -r event ; do
     xfce4-panel --plugin-event=genmon-1:refresh:bool:true
