@@ -6,6 +6,7 @@ bspc query --monitors | while read -r monitor ; do
     ((counter++))
     # echo -n $counter
     # echo -n 'Monitor '$monitor
+    echo -n ' '
     bspc query --names --monitor $monitor --desktops | while read -r dtop ; do
         focusedDt=$(bspc query --names --desktop $monitor:focused --desktops)
 
