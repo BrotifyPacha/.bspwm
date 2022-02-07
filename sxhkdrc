@@ -106,6 +106,8 @@ alt F6
     amixer set Master 5%-
 alt F7
     amixer set Master 5%+
+alt F8
+    "$BSPCONFIG/sxhkd-helpers/ToggleOutputs-cmd"
 
 # Media stuff
 alt F1

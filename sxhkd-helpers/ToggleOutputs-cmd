@@ -1,0 +1,16 @@
+
+current=$(pactl get-default-sink)
+echo "current: $current"
+declare -a sinks
+sinks=($(pactl list short sinks | awk '{print $2}'))
+echo all: ${sinks[@]}
+for i in "${!sinks[@]}"
+do
+    if [ ${sinks[$i]} == $current ] ; then
+        if [ ${sinks[$i]} != ${sinks[-1]} ] ; then
+            pacmd set-default-sink ${sinks[$i+1]}
+        else
+            pacmd set-default-sink ${sinks[0]}
+        fi
+    fi
+done
