@@ -1,0 +1,14 @@
+#! /usr/bin/zsh
+
+layout=$(bspc query --tree -d | grep -Po 'layout":"[^"]*' | awk -F '":"' '{print $2}')
+
+icon=$layout
+case "$layout" in
+    tiled) icon="𤋮" ;;
+    monocle) icon="恵" ;;
+esac
+
+echo "<iconclick>bspc desktop --layout next</iconclick>"
+echo "<txt>$icon</txt>"
+echo "<tool>$layout</tool>"
+
