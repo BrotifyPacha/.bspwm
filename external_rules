@@ -44,6 +44,10 @@ case "$class" in
         fi
         echo " desktop=Z follow=on"
         ;;
+    firefox_app_*)
+        eval "$consequences"
+        echo "desktop=M follow=on"
+        ;;
     '')
         case $procCommand in
             (spotify)

@@ -2,14 +2,13 @@
 # Launching programs
 ctrl shift t
     zsh "$HOME/.config/bspwm/bspwm-singleton" telegram-desktop
-ctrl shift s
-    zsh "$HOME/.config/bspwm/bspwm-singleton" spotify
 ctrl shift b
     zsh "$HOME/.config/bspwm/bspwm-singleton" brave
 ctrl shift d
     zsh "$HOME/.config/bspwm/bspwm-singleton" datagrip
+# https://github.com/koddr/yandex-music-desktop
 ctrl shift m
-    zsh "$HOME/.config/bspwm/bspwm-singleton" evolution
+    zsh "$HOME/.config/bspwm/helpers/firefox_app_singleton.sh" yamusic music.yandex.ru
 ctrl shift e
     xdg-open ~
 ctrl shift i
