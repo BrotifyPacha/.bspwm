@@ -1,0 +1,15 @@
+#!/bin/sh
+
+while bspc subscribe -c 1 node_focus node_state desktop_layout > /dev/null ; do
+    bspc config focused_border_color \#7DFFFF
+    is_monocle=$(bspc query --tree --desktop | grep -o monocle)
+    if [ -n "$is_monocle" ] ; then
+        bspc query --nodes --node 'focused' | while read -r did; do
+            bspc config focused_border_color \#00FFaF
+        done
+    fi
+    bspc query --nodes --node 'focused.floating' | while read -r wid; do
+        bspc config focused_border_color \#FF0066
+    done
+done
+

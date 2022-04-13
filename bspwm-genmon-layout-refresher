@@ -1,0 +1,5 @@
+#! /bin/sh
+
+bspc subscribe desktop_focus | while read -r event ; do
+    xfce4-panel --plugin-event=genmon-1:refresh:bool:true
+done

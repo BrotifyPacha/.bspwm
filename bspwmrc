@@ -33,12 +33,10 @@ kill $(ps -C sxhkd,picom -o pid=)
 sxhkd -c ~/.config/bspwm/sxhkdrc &
 picom --config ~/.config/bspwm/picom.conf --experimental-backends &
 
-
-killall bspc
-# Update genmon-1 when desktop changes
-bspc subscribe desktop_focus | while read -r event ; do
-    xfce4-panel --plugin-event=genmon-1:refresh:bool:true
-done
+kill $(ps aux | grep 'bspwm-genmon-layout-refresher' | awk '{ print $2 }' | head --lines=-1)
+kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
+$BSPCONFIG/bspwm-genmon-layout-refresher &
+$BSPCONFIG/bspwm-colorful-states &
 
 # JVM hoolahoops
 _JAVA_AWT_WM_NONREPARTENTING=1
