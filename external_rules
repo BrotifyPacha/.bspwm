@@ -32,7 +32,8 @@ case "$class" in
         eval "$consequences"
         echo "state=floating center=on follow=on"
         ;;
-    'zoom')
+    'zoom') ;&
+    'zoom ')
         eval "$consequences"
         WM_NAME=$(xprop -notype -id $wid WM_NAME | sed 's%WM_NAME = %%')
         echo "WM_NAME = -$WM_NAME-" >> ~/.rules_cmd.log
