@@ -1,3 +1,5 @@
+# Command for moving all windows to some desktop
+# for node in $(bspc query --nodes --desktop); do bspc node $node.leaf --to-desktop 2; done
 
 # Launching programs
 ctrl shift t
