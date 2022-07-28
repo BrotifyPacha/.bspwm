@@ -36,9 +36,12 @@ alt shift ctrl {h,j,k,l}
 
 # Mapping for < and > keys
 alt {comma,period}
-    bspc node --to-desktop {prev,next}
+    bspc desktop --focus {prev,next}.local
 alt shift {comma,period}
     bspc node --to-desktop {prev,next} --follow
+ctrl {comma,period}
+    bspc node --to-desktop {prev,next}
+
 
 ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
@@ -90,10 +93,6 @@ alt p
     bspc node last --focus
 alt shift p
     bspc node --to-node "last.!automatic" --state tiled
-
-
-alt { ,shift} w
-    bspc desktop --focus {next,prev}.local
 
 alt F12
     xprop_val="$(xprop WM_CLASS)" &&  notify-send Xprop "$xprop_val"
