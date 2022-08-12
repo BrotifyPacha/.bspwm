@@ -1,6 +1,6 @@
 #! /bin/sh
 
-export BSPCONFIG="$HOME/.config/bspwm/"
+export BSPCONFIG="$HOME/.config/bspwm"
 
 # bspc monitor DP-1 -d 1 2 3 4
 # bspc monitor HDMI-1 -d 5 6 7 8
@@ -31,9 +31,9 @@ bspc config external_rules_command "$BSPCONFIG/external_rules"
 xsetroot -cursor_name left_ptr &
 
 # Autostart
-kill $(ps -C sxhkd,picom -o pid=)
-sxhkd -c ~/.config/bspwm/sxhkdrc &
-picom --config ~/.config/bspwm/picom.conf --experimental-backends &
+kill -9 $(ps -C sxhkd,picom -o pid=)
+sxhkd -c $BSPCONFIG/sxhkdrc &
+picom --config $BSPCONFIG/picom.conf --experimental-backends &
 
 kill $(ps aux | grep 'bspwm-genmon-layout-refresher' | awk '{ print $2 }' | head --lines=-1)
 kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
