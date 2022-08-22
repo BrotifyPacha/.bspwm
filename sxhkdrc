@@ -111,6 +111,10 @@ alt F7
     amixer set Master 5%+
 alt F8
     "$BSPCONFIG/sxhkd-helpers/ToggleOutputs-cmd"
+alt F9
+    pactl load-module module-loopback latency_msec=1
+alt shift F9
+    pactl unload-module module-loopback
 
 # Media stuff
 alt F1
