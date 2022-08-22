@@ -7,7 +7,7 @@ export BSPCONFIG="$HOME/.config/bspwm"
 bspc monitor focused -d 1 2 3 4 5 Z
 bspc monitor east -d 6 7 8 9 0 M
 
-export BSPC_BORDER_RADIUS=5
+export BSPC_BORDER_RADIUS=6
 # BSPWM config
 bspc config border_width	4
 bspc config window_gap		10
