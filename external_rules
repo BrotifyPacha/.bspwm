@@ -14,10 +14,6 @@ case "$class" in
         eval "$consequences"
         echo "monitor=west state=floating center=on follow=on rectangle=800x400+0+0"
         ;;
-    'jetbrains-datagrip')
-        eval "$consequences"
-        echo "desktop=2 border=off follow=on"
-        ;;
     'Xfce4-panel')
         eval "$consequences"
         echo "monitor=west state=floating follow=on"
