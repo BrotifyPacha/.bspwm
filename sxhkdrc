@@ -10,7 +10,7 @@ ctrl shift d
     zsh "$HOME/.config/bspwm/bspwm-singleton" datagrip
 # https://github.com/koddr/yandex-music-desktop
 ctrl shift m
-    zsh "$HOME/.config/bspwm/helpers/firefox_app_singleton.sh" yamusic music.yandex.ru
+    zsh "$HOME/.config/bspwm/helpers/firefox_app_singleton.sh" applemusic music.apple.com
 ctrl shift e
     xdg-open ~
 ctrl shift i
