@@ -1,7 +1,5 @@
 #! /bin/sh
 
-# TODO: add handler for monitor_remove event
-
 export BSPCONFIG="$HOME/.config/bspwm"
 
 # bspc monitor DP-1 -d 1 2 3 4
@@ -20,6 +18,7 @@ bspc config -m focused initial_polarity second_child
 bspc config bottom_padding	0
 bspc config left_padding	0
 bspc config right_padding	0
+bspc config remove_unplugged_monitors true
 
 bspc config normal_border_color    \#222222
 bspc config focused_border_color   \#7DFFFF
