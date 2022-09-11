@@ -100,7 +100,7 @@ alt F12
     xprop_val="$(xprop WM_CLASS)" &&  notify-send Xprop "$xprop_val"
 
 ctrl alt shift r
-    bspc wm -d > /tmp/bspwm_state ; bspc wm -r ; bspc wm -o ; bspc wm -l /tmp/bspwm_state ; bspc wm --adopt-orphans ; pkill -usr1 -x sxhkd
+    bspc wm -d > /tmp/bspwm_state ; bspc wm --restart ; sleep 0.1; bspc wm --adopt-orphans; bspc wm -l /tmp/bspwm_state
 
 # Sound stuff
 alt F5
