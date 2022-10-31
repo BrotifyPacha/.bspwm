@@ -12,17 +12,17 @@ echo $procCommand >> ~/.rules_cmd.log
 case "$class" in
 	'Wrapper-2.0')
         eval "$consequences"
-        echo "monitor=west state=floating center=on follow=on rectangle=800x400+0+0"
+        echo "monitor=primary state=floating center=on follow=on rectangle=800x400+0+0"
         ;;
     'Xfce4-panel')
         eval "$consequences"
-        echo "monitor=west state=floating follow=on"
+        echo "monitor=primary state=floating follow=on"
         ;;
     'Xfce4-settings-manager') ;&
     'Blueman-manager') ;&
     'Blueberry.py')
         eval "$consequences"
-        echo "monitor=west state=floating center=on follow=on"
+        echo "monitor=primary state=floating center=on follow=on"
         ;;
     'Galculator') 
         eval "$consequences"
@@ -39,9 +39,9 @@ case "$class" in
         if [ $WM_NAME == '"Settings"' ] ; then
             echo -n "state=floating center=on"
         fi
-        if [ -z $WM_NAME ] && ([ -n "$_NET_WM_WINDOW_OPACITY" ] || [ -n "$_NET_WM_STATE" ]) ; then
+        if [ -z $WM_NAME ] || ([ -n "$_NET_WM_WINDOW_OPACITY" ] || [ -n "$_NET_WM_STATE" ]) ; then
             echo "should be floating and borderless" >> ~/.rules_cmd.log
-            echo -n "state=floating center=on border=off"
+            echo -n "state=floating border=off"
         fi
         echo " desktop=Z follow=on"
         ;;
