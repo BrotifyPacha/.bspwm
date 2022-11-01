@@ -3,13 +3,16 @@
 LOG_FILE="$HOME/.bspwm-singleton-log"
 
 function startOrFocus() {
-    if [[ $# != 1 ]] echo "Usage: bspwm-singleton cmd" && exit
-        wids=(`$BSPCONFIG/helpers/get_window_cmds | grep $1 | awk '{print $1}' | tr '\n' ' '`)
-    echo $wids >> $LOG_FILE
+    echo "Request: $@" >> $LOG_FILE
+    wids=(`$BSPCONFIG/helpers/get_window_cmds | grep $1 | awk '{print $1}' | tr '\n' ' '`)
     if [[ -z $wids ]] {
-        $1 &
+        launch_command=$1
+        shift
+        echo "Windows not found launching $launch_command $@">> $LOG_FILE
+        $launch_command $@ &
         return
     }
+    echo "Windows found: "$wids >> $LOG_FILE
     for wid in $wids; do
         echo "bspc node $wid --flag hidden=off --focus" >> $LOG_FILE
         bspc node $wid --flag hidden=off --focus
