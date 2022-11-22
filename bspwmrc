@@ -3,7 +3,7 @@
 export BSPCONFIG="$HOME/.config/bspwm"
 
 bspc monitor primary --focus
-if [ $(bspc query --monitors | wc -l ) == "3" ] ; then
+if [ $(bspc query --monitors | wc -l ) = "3" ] ; then
     bspc monitor west -d V1 V2 V3 V4
     bspc monitor focused -d 1 2 3 4 5 Z
     bspc monitor east -d 6 7 8 9 0 M
@@ -12,7 +12,7 @@ else
     bspc monitor north -d 6 7 8 9 0
 fi
 
-export BSPC_BORDER_RADIUS=6
+export BSPC_BORDER_RADIUS=0
 # BSPWM config
 bspc config border_width	4
 bspc config window_gap		10
