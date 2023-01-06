@@ -1,4 +1,9 @@
+#!/usr/bin/zsh
 
+if [ -z "$(wmctrl --help)" ] ; then
+    notify-send 'CONFIG ERROR' 'wmctrl is not installed'
+    exit 1
+fi
 wids=$(wmctrl -l | awk '{print $1}')
 for wid in $wids
 do
