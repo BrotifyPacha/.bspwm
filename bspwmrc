@@ -33,9 +33,6 @@ bspc config pointer_modifier mod1
 bspc config external_rules_command "$BSPCONFIG/external_rules"
 # bspc rule --add Wrapper\-\2\.\0 state=floating center=on rectangle=400x600+0+0 border=off
 
-# Set cursor to left_ptr
-xsetroot -cursor_name left_ptr &
-
 # Autostart
 kill -9 $(ps -C sxhkd,picom -o pid=)
 sxhkd -c $BSPCONFIG/sxhkdrc &
