@@ -36,7 +36,7 @@ bspc config external_rules_command "$BSPCONFIG/external_rules"
 # Autostart
 kill -9 $(ps -C sxhkd,picom -o pid=)
 sxhkd -c $BSPCONFIG/sxhkdrc &
-picom --config $BSPCONFIG/picom.conf --experimental-backends &
+picom --config $BSPCONFIG/picom.conf &
 
 kill $(ps aux | grep 'bspwm-genmon-layout-refresher' | awk '{ print $2 }' | head --lines=-1)
 kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
