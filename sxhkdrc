@@ -14,7 +14,7 @@ ctrl shift m
 ctrl shift e
     xdg-open ~
 ctrl shift i
-    zsh "$HOME/.config/bspwm/bspwm-singleton" insomnia
+    zsh "$HOME/.config/bspwm/bspwm-singleton" insomnia --disable-gpu-sandbox
 ctrl shift c
     zsh "$HOME/.config/bspwm/bspwm-singleton" galculator
 ctrl shift z
