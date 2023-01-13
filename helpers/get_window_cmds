@@ -6,8 +6,6 @@ fi
 if [ $($BSPCONFIG/helpers/check_installed.sh xdo) ] ; then
     exit 1
 fi
-wids=$(wmctrl -l | awk '{print $1}')
-for wid in $wids
-do
+wmctrl -l | awk '{print $1}' | while read -r wid ; do
     echo $wid $(ps -o command= -p $(xdo pid $wid) | awk '{print $1}')
 done
