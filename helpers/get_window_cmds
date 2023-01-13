@@ -1,7 +1,9 @@
 #!/usr/bin/zsh
 
-if [ -z "$(wmctrl --help)" ] ; then
-    notify-send 'CONFIG ERROR' 'wmctrl is not installed'
+if [ $($BSPCONFIG/helpers/check_installed.sh wmctrl) ] ; then
+    exit 1
+fi
+if [ $($BSPCONFIG/helpers/check_installed.sh xdo) ] ; then
     exit 1
 fi
 wids=$(wmctrl -l | awk '{print $1}')
