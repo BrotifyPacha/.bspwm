@@ -4,9 +4,9 @@ export BSPCONFIG="$HOME/.config/bspwm"
 
 bspc monitor primary --focus
 if [ $(bspc query --monitors | wc -l ) = "3" ] ; then
-    bspc monitor west -d V1 V2 V3 V4
-    bspc monitor focused -d 1 2 3 4 5 6
-    bspc monitor east -d 7 8 9 0 Z M
+    bspc monitor HDMI-0 -d V1 V2 V3 V4
+    bspc monitor DP-4  -d 1 2 3 4 5 6
+    bspc monitor DP-2 -d 7 8 9 0 Z M
 else
     bspc monitor focused -d 1 2 3 4 5 Z M
     bspc monitor north -d 6 7 8 9 0
@@ -38,10 +38,12 @@ kill -9 $(ps -C sxhkd,picom -o pid=)
 sxhkd -c $BSPCONFIG/sxhkdrc &
 picom --config $BSPCONFIG/picom.conf &
 
-kill $(ps aux | grep 'bspwm-genmon-layout-refresher' | awk '{ print $2 }' | head --lines=-1)
-kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
+# kill $(ps aux | grep 'bspwm-genmon-layout-refresher' | awk '{ print $2 }' | head --lines=-1)
+# kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
 $BSPCONFIG/bspwm-genmon-layout-refresher &
 $BSPCONFIG/bspwm-colorful-states &
+
+bspc wm -o
 
 # JVM hoolahoops
 _JAVA_AWT_WM_NONREPARTENTING=1
