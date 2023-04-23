@@ -5,8 +5,8 @@ export BSPCONFIG="$HOME/.config/bspwm"
 bspc monitor primary --focus
 if [ $(bspc query --monitors | wc -l ) = "3" ] ; then
     bspc monitor HDMI-0 -d V1 V2 V3 V4
-    bspc monitor DP-4  -d 1 2 3 4 5 6
-    bspc monitor DP-2 -d 7 8 9 0 Z M
+    bspc monitor DP-2  -d 1 2 3 4 5 6
+    bspc monitor DP-4 -d 7 8 9 0 Z M
 else
     bspc monitor focused -d 1 2 3 4 5 Z M
     bspc monitor north -d 6 7 8 9 0
