@@ -48,6 +48,7 @@ barrier &
 # kill $(ps aux | grep 'bspwm-colorful-states' | awk '{ print $2 }' | head --lines=-1)
 $BSPCONFIG/bspwm-genmon-layout-refresher &
 $BSPCONFIG/bspwm-colorful-states &
+$BSPCONFIG/helpers/sync_volume_controll_cmd &
 
 bspc wm -o
 

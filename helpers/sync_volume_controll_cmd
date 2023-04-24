@@ -1,0 +1,13 @@
+#/bin/sh
+
+pactl subscribe | while read -r event ; do
+    currentSink=$(pactl get-default-sink)
+    currentVolume=$(pactl get-sink-volume ${currentSink} | grep -oP '[0-9]+%')
+
+    for sink in $(pactl list sinks short | awk '{ print $2}'); do
+        if [ ${sink} != ${currentSink} ] ; then
+            pactl set-sink-volume ${sink} $currentVolume
+        fi
+    done
+
+done
