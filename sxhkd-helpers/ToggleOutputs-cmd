@@ -2,7 +2,7 @@
 current=$(pactl get-default-sink)
 echo "current: $current"
 declare -a sinks
-sinks=($(pactl list short sinks | awk '{print $2}'))
+sinks=($(pactl list short sinks | awk '{print $2}' | grep -v hdmi))
 echo all: ${sinks[@]}
 for i in "${!sinks[@]}"
 do
