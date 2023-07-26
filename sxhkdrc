@@ -48,13 +48,6 @@ ctrl {comma,period}
 ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
 
-alt {1,2,3,4,5,6,7,8,9,0,minus,equal,grave}
-    bspc desktop {1,2,3,4,5,6,7,8,9,0,Z,M,V1} --focus
-alt shift {1,2,3,4,5,6,7,8,9,0,minus,equal,grave}
-    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,Z,M,V1} --follow
-ctrl {1,2,3,4,5,6,7,8,9,0,minus,equal,grave}
-    bspc node --to-desktop {1,2,3,4,5,6,7,8,9,0,Z,M,V1}
-
 alt bracketright
     bspc node --resize right +50 0 || bspc node --resize left +50 0
 alt shift bracketright
