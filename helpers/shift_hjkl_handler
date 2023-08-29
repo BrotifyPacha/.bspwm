@@ -14,5 +14,5 @@ if [[ $state == '"floating"' ]] {
             bspc node --move +50 0 ;;
     esac
 } else {
-    bspc node --swap $1 --follow || bspc node -m $1 --follow
+    bspc node --swap $1.local --follow || bspc node -m $1 --follow
 }
