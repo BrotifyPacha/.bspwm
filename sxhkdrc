@@ -46,6 +46,12 @@ ctrl {comma,period}
 ctrl shift {h,j,k,l}
     bspc node --presel-dir '~'{west,south,north,east}
 
+alt ctrl shift r
+    bspc wm -d > /tmp/bspwm_state ; bspc wm --restart ; sleep 0.1; bspc wm --adopt-orphans; bspc wm -l /tmp/bspwm_state
+
+alt ctrl shift m
+    "$BSPCONFIG/configure-monitors.sh"
+
 alt bracketright
     bspc node --resize right +50 0 || bspc node --resize left +50 0
 alt shift bracketright
@@ -89,9 +95,6 @@ alt shift p
 
 alt F12
     xprop_val="$(xprop WM_CLASS)" &&  notify-send Xprop "$xprop_val"
-
-ctrl alt shift r
-    bspc wm -d > /tmp/bspwm_state ; bspc wm --restart ; sleep 0.1; bspc wm --adopt-orphans; bspc wm -l /tmp/bspwm_state
 
 # Sound stuff
 alt F5
