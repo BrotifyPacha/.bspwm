@@ -1,4 +1,4 @@
-#/bin/sh
+#! /bin/sh
 
 pactl subscribe | while read -r event ; do
     currentSink=$(pactl get-default-sink)

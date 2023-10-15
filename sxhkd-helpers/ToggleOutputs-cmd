@@ -1,3 +1,4 @@
+#! /bin/sh
 
 current=$(pactl get-default-sink)
 echo "current: $current"
