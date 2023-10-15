@@ -1,6 +1,7 @@
 #! /bin/sh
 
 export BSPCONFIG="$HOME/.config/bspwm"
+export PATH="$PATH:/home/$USER/.config/bspwm/bins"
 
 $BSPCONFIG/configure-monitors.sh
 
