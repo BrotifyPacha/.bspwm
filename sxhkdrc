@@ -21,11 +21,11 @@ ctrl shift z
     zsh "$HOME/.config/bspwm/bspwm-singleton" zoom
 
 Print
-    xfce4-screenshooter --region
+    ksnip --rectarea
 alt Print
-    xfce4-screenshooter --window
+    ksnip --current
 ctrl shift Print
-    xfce4-screenshooter --fullscreen
+    ksnip --fullscreen
 
 alt {h,j,k,l}
     "$BSPCONFIG/helpers/focus_window_or_monitor" {west,south,north,east}
