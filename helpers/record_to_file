@@ -1,0 +1,15 @@
+# /bin/env zsh
+
+# recording_active=$(ps aux | grep -P "ffmpeg.*x11grab" | grep -v "grep" | awk '{print $2}')
+
+# if [ "$recording_active" != "" ] ; then
+#     echo "kill -s "INT" $recording_active"
+#     kill -s INT "$recording_active"
+#     exit 0
+# fi
+
+outputfile=$(zenity --file-selection --save)
+if [ "$outputfile" == "" ] ; then
+    exit 0
+fi
+kitty ffmpeg -y -framerate 24 -f x11grab -select_region 1 -draw_mouse 1 -i :0.0 ${outputfile}
