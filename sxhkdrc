@@ -24,6 +24,8 @@ Print
     ksnip --rectarea
 alt Print
     ksnip --current
+ctrl Print
+    ksnip --active
 ctrl shift Print
     ksnip --fullscreen
 
