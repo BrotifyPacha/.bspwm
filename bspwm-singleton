@@ -8,6 +8,7 @@ function startOrFocus() {
     if [[ -z $wids ]] {
         launch_command=$1
         shift
+        notify-send "Launching $launch_command"
         echo "Windows not found launching $launch_command $@">> $LOG_FILE
         $launch_command $@ &
         return
