@@ -47,23 +47,6 @@ case "$class" in
         eval "$consequences"
         echo "state=floating center=on follow=on"
         ;;
-    'zoom') ;&
-    'zoom ')
-        eval "$consequences"
-        WM_NAME=$(xprop -notype -id $wid WM_NAME | sed 's%WM_NAME = %%')
-        _NET_WM_WINDOW_OPACITY=$(xprop -id $wid _NET_WM_WINDOW_OPACITY | grep -v 'not found')
-        _NET_WM_STATE=$(xprop -id $wid _NET_WM_STATE | grep -v 'not found')
-        echo "WM_NAME = -$WM_NAME-" >> ~/.rules_cmd.log
-        echo "OPACITY = -$_NET_WM_WINDOW_OPACITY-" >> ~/.rules_cmd.log
-        if [ $WM_NAME == '"Settings"' ] ; then
-            echo -n "state=floating center=on"
-        fi
-        if [ -z $WM_NAME ] || ([ -n "$_NET_WM_WINDOW_OPACITY" ] || [ -n "$_NET_WM_STATE" ]) ; then
-            echo "should be floating and borderless" >> ~/.rules_cmd.log
-            echo -n "state=floating border=off"
-        fi
-        echo " desktop=Z follow=on"
-        ;;
     firefox_app_*)
         eval "$consequences"
         echo "desktop=M follow=on"
