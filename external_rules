@@ -12,7 +12,7 @@ echo $procCommand >> ~/.rules_cmd.log
 case "$class" in
 	'Wrapper-2.0')
         eval "$consequences"
-        echo "monitor=primary state=floating center=on follow=on rectangle=800x400+0+0"
+        echo "state=floating center=on follow=on rectangle=800x400+0+0"
         ;;
     'Xfce4-panel')
         eval "$consequences"
