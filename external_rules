@@ -24,6 +24,25 @@ case "$class" in
         eval "$consequences"
         echo "monitor=primary state=floating center=on follow=on"
         ;;
+    'Netzone')
+        monitor=$(bspc query --monitor focused --monitors --names)
+        dimensions=$(xrandr --query | grep "^${monitor} " | grep -P -o '\d+x\d+[-+]\d+[-+]\d+' | grep -oP '\d+')
+        # notify-send "$dimensions"
+        screen_w=$(echo -e "$dimensions" | head -n 1)
+        screen_h=$(echo -e "$dimensions" | head -n 2 | tail -n 1)
+        screen_x=$(echo -e "$dimensions" | head -n 3 | tail -n 1)
+        screen_y=$(echo -e "$dimensions" | head -n 4 | tail -n 1)
+        # notify-send "$screen_w $screen_h"
+
+        netzone_w=250
+        netzone_h=450
+        let "netzone_pos_x = $screen_x + $screen_w - $netzone_w - 20"
+        let "netzone_pos_y = $screen_y + $screen_h - $netzone_h - 20"
+
+        # notify-send "$netzone_pos_x $netzone_pos_y"
+        eval "$consequences"
+        echo "state=floating rectangle=250x450+$netzone_pos_x+$netzone_pos_y"
+        ;;
     'Galculator') 
         eval "$consequences"
         echo "state=floating center=on follow=on"
