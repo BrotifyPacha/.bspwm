@@ -1,5 +1,5 @@
 bspc config top_padding 0
-bspc config -m primary top_padding 35
+bspc config -m primary top_padding 37
 
 case "$(bspc query --monitors | wc -l )" in
     "3")
